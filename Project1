@@ -1,0 +1,128 @@
+<!-- Add Nav Bar Effects -->
+
+<!-- Jumbotron -->
+<div class="jumbotron">
+  <h1>Welcome</h1>
+  <p>Scroll Down</p>
+</div>
+
+<!-- Navigation -->
+    <nav class="navbar navbar-expand navbar-light bg-light sticky-top justify-content-center">      
+      
+        <ul class="nav navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#mountain-img">Mountain</a></li>
+          <li class="nav-item"><a class="nav-link" href="#lake-img">Lake</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sunset-img">Sunset</a></li>
+        </ul>
+    </nav>
+
+
+<!-- Images -->
+<div id="image-group">
+<img src="https://www.nationalgeographic.com/content/dam/travel/2019-digital/yosemite-guide/yosemite-national-park-california.jpg" id="mountain-img">
+  <a href="https://www.nationalgeographic.com/content/dam/travel/2019-digital/yosemite-guide/yosemite-national-park-california.jpg"><caption>Yosemite National Park, CA.</caption></a>
+</div>
+<hr>
+
+<div id="image-group">
+  <img src="https://www.larimer.org/sites/default/files/horsetoothsunset.jpg" id="lake-img">
+  <a href="https://www.larimer.org/sites/default/files/horsetoothsunset.jpg"><caption>Horsetooth Lake, Fort Collins CO.</caption></a>
+</div>
+
+<hr>
+
+<div id="image-group">
+  <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/winter-sunset-at-horsetooth-rock-shari-massey.jpg" id="sunset-img">
+  <a href="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/winter-sunset-at-horsetooth-rock-shari-massey.jpg"><caption>Horsetooth Rock, Fort Collins CO.</caption></a>
+</div>
+
+<hr>
+<footer>Navigation and Smooth Scroll Test -- Created by Ethan C.</footer>
+
+--CSS--
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  text-align: center;
+}
+
+@media (max-width: 600px){
+  body{font-size: 12px;}
+  .jumbotron .n{padding-top: 12px; padding-bottom: 4px; margin: 0px;
+  }
+  hr{margin: 0px;}
+}
+
+.jumbotron{
+  margin: 0px;
+  background-image: url("https://www.stratoscale.com/wp-content/uploads/2019/05/bigstock-168398480.jpg");
+  background-size: auto;
+  filter: grayscale(100%);
+  border-radius: 0px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Nav effect */
+.navbar .navbar-nav li a{
+  display: inline-block;
+  position: relative;
+}
+
+.navbar .navbar-nav li a:before{
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  bottom: 10px;
+  content: '';
+  background: #000;
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+.navbar .navbar-nav li a:hover:before{
+  width: 100%;
+  bottom: 5px;
+  height: 5px;
+  left: 0;
+}
+
+@media (max-width: 600px){
+  .navbar .navbar-nav li a:hover:before{
+  width: 100%;
+  bottom: 8px;
+  height: 2px;
+  left: 0;
+}
+}
+/* Images */
+#image-group{
+  padding: 1.8rem;
+}
+
+#mountain-img{
+  width: 50%;
+  display: block;
+  margin: auto;
+}
+
+#lake-img{
+  width: 50%;
+  display: block;
+  margin: auto;
+}
+
+#sunset-img{
+  width: 50%;
+  display: block;
+  margin: auto;
+}
+
+footer{
+  padding-bottom: 1.0rem;
+}
